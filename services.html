@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title id="windowTitle"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="libs/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script src="libs/popper/1.16.0/js/popper.js"></script>
+    <script src="libs/jquery/3.5.1/js/jquery-2.2.3.min.js"></script>
+    <script src="libs/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/common-o.js" charset="utf-8"></script>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="style4.css" rel="stylesheet">
+
+</head>
+
+<body id="bodyPage" class="container-fluid" onhashchange="loadQuestion()" onpageshow="loadQuestion()">
+    <div id="uuu"></div>
+    <div class="row" id="entete1">
+        <div class="col-lg-2" >
+            <div id="logo"></div>    
+            <div class="row"><strong>Bien chez soi</strong></div>    
+        </div>
+        <div class="col-lg-8"></div>
+        <div class="col-lg-2">
+           <div class="row">+241 74298756</div> 
+           <div class="row"><div class="input-group-prepend"><span class="input-group-text" aria-label="arobase">R</span></div>
+           <input type="text" class="form-control taille" placeholder="Recherche" id="email">                  
+       </div>
+
+           </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2 rangement"><a href="accueil.html">Accueil</a></div>
+        <div class="col-lg-2 rangement"><a href="a_propos.html">A propos</a></div>
+        <div class="col-lg-2 rangement"><a href="catalogue.html">Catalogue</a></div>
+        <div class="col-lg-2 rangement"><a href="services.html">Services</a></div>
+        <div class="col-lg-2 rangement"><a href="contact.html">Contact</a></div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5">
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li><strong>Peinture murale</strong> </li>
+                <li><strong>Pose de rideaux</strong></li>
+                <li><strong>Pose de tableaux</strong></li>
+                <li><strong>Habillage de meubles</strong></li>
+                <li><strong>Service complet</strong></li>
+            </ul>
+        </div>
+        <div class="col-lg-5">
+            <div class="container" >
+                <h1>Formulaires</h1>
+                <form class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" placeholder="Pierre" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="nom">Nom de famille</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Giraud" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="pseudo">Pseudo</label>
+                            <input type="text" class="form-control" id="pseudo" placeholder="PierreGird" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="ville">Ville</label>
+                            <input type="text" class="form-control" id="ville" placeholder="Ville" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="pays">Pays</label>
+                            <input type="text" class="form-control" id="pays" placeholder="Pays" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cp">Code postal</label>
+                            <input type="number" class="form-control" id="cp" placeholder="Code postal" required>
+                            <div class="valid-feedback">Ok !</div>
+                            <div class="invalid-feedback">Valeur incorrecte</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="cgu" required>
+                          <label class="form-check-label" for="cgu">J'accepte les conditions générales d'utilisation et de vente</label>
+                          <div class="invalid-feedback">Vous devez accepter les CGU pour continuer</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </form>
+            </div>
+            <script>
+              /*La fonction principale de ce script est d'empêcher l'envoi du formulaire si un champ a été mal rempli
+               *et d'appliquer les styles de validation aux différents éléments de formulaire*/
+              (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                  let forms = document.getElementsByClassName('needs-validation');
+                  let validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+                }, false);
+              })();
+            </script>
+   
+        </div>
+    </div>
+
